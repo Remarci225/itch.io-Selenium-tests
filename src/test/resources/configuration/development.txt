@@ -1,0 +1,2 @@
+USERNAME: Your_username_here
+PASSWORD: Your_password_here

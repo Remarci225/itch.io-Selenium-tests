@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'io.github.remarci225'
-version = '1.0-SNAPSHOT'
+version = '1.0'
 
 repositories {
     mavenCentral()
@@ -12,8 +12,17 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.32.0'
+    testImplementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.32.0'
 }
 
 test {
     useJUnitPlatform()
+}
+
+tasks.register("presentation") {
+    group 'Presentation'
+    description 'Runs clean and test for presentation purposes'
+    dependsOn("clean", "test")
 }
